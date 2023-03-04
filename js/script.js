@@ -123,27 +123,53 @@ const optArticleSelector = '.post',
 
     /*find all article*/
 
+    const articles = document.querySelectorAll(optArticleSelector);
+
     /*START LOOP: for every article*/
+
+    for(let article of articles){
 
       /*find tags wrapper*/
 
+      const tagWrapper = article.querySelector(optArticleTagsSelector);
+
       /*make html variable with empty string*/
+
+      let html = '';
 
       /*get tags from data-tag attribute*/
 
+      const articleTags = article.getAttribute('data-tags');
+
       /*split tags into aray*/
+
+      const articleTagsArray = articleTags.split(' ');
 
       /*START LOOP: for each tag*/
 
+      for(let tag of articleTagsArray){
+
         /*generate HTML of the link*/
+
+        const linkHTML = '<li><a href="#tag-'+ tag +'"><span>'+ tag +'</span></a></li>';
 
         /*add generated code to html variable*/
 
+        html = html + linkHTML;
+
       /*END LOOP : for each tag*/
+
+      }
 
       /*insert HTML of all the links into tags wrapper*/
 
-    /*END LOOP: for every article*/
+      tagWrapper.innerHTML = html; 
 
+    /*END LOOP: for every article*/
+    }
 
   }
+
+  generateTags();
+
+  
