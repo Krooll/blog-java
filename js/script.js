@@ -367,7 +367,11 @@ function generateAuthors(){
 
   /*NEW add html from allTags to taglist*/
 
-  authorList.innerHTML = allAuthors.join('');
+  authorList.innerHTML = allAuthors;
+
+  /* [NEW] start loop for each author in allAuthors */
+
+  
 
 }
 
