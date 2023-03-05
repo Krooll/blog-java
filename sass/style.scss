@@ -52,6 +52,10 @@ body {
   flex: 1 0 0;
 }
 
+.sidebar-2 li{ 
+  display: inline-block;
+}
+
 .posts {
   flex: 2 0 0;
 }
@@ -117,4 +121,18 @@ body {
   p {
     margin: 0 10px 0 0;
   }
+}
+
+.tag-size-5 {
+  font-size: 200%;
+  color: pink; 
+}
+.tag-size-3 {
+  font-size: 150%; 
+  color: green; 
+}
+
+.tag-size-1 {
+  font-size : 120%; 
+  color: gold; 
 }
