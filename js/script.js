@@ -169,6 +169,7 @@ const optArticleSelector = '.post',
         /*generate HTML of the link*/
 
         const linkHTML = '<li><a href="#tag-'+ tag +'"><span>'+ tag +'</span></a></li>';
+        console.log(linkHTML);
 
         /*add generated code to html variable*/
 
@@ -313,7 +314,7 @@ const optArticleSelector = '.post',
 
 function generateAuthors(){
 
-  /*NEW create new variable allAuthors witch empty object*/ 
+  /*NEW create new variable allAuthors witch empty array*/ 
 
   let allAuthors = [];
 
@@ -348,7 +349,7 @@ function generateAuthors(){
 
     /*NEW check if this link is NOT already in allAuthors*/
 
-    if(allAuthors.indexOf(linkHTML)){
+    if(allAuthors.indexOf(linkHTML) == -1){
 
       /*NEW generate code to allTags array*/
 
@@ -367,11 +368,7 @@ function generateAuthors(){
 
   /*NEW add html from allTags to taglist*/
 
-  authorList.innerHTML = allAuthors;
-
-  /* [NEW] start loop for each author in allAuthors */
-
-  
+  authorList.innerHTML = allAuthors.join('');
 
 }
 
