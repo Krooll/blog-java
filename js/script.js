@@ -362,7 +362,7 @@ function generateAuthors(){
 
     //const linkHTML = '<p class="post-author"><a href="#author-' + authorTag + '">' + authorTag + '</a></p>';
     const linkHTMLData = {id: authorTag, title: authorTag};
-    const linkHTML = templates.authorsLink(linkHTMLData);
+    const linkHTML = templates.articleAuthor(linkHTMLData);
 
     /* add generated code to html variable */
 
