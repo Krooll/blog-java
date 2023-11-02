@@ -78,6 +78,7 @@ function generateTitleLinks(customSelector = ''){
   /*find all the articles and save them to variable: articles*/
 
   const articles = document.querySelectorAll(optArticleSelector + customSelector);
+  console.log('articles', articles)
 
   let html= ''; 
 
@@ -271,7 +272,8 @@ function tagClickHandler(event){
 
   /* make a new constant "tag" and extract tag from the "href" constant */
 
-  const tag = href.replace('#tag-', ''); 
+  const tag = href.replace('#tag-','');
+  console.log('tag', tag) 
 
   /* find all tag links with class active */
 
@@ -291,7 +293,7 @@ function tagClickHandler(event){
 
   /* find all tag links with "href" attribute equal to the "href" constant */
 
-  const tagLinks = document.querySelectorAll('[href^="' + href + '"]');
+  const tagLinks = document.querySelectorAll('a[href^="' + href + '"]');
 
   /* START LOOP: for each found tag link */
 
@@ -315,7 +317,8 @@ function addClickListenerToTags(){
 
   /*find all links to tags */
 
-  const links = document.querySelectorAll('.list.list-horizontal a, .list.tags a');
+  const links = document.querySelectorAll('.list.list-horizontal a');
+  console.log('links', links)
     
   /* START LOOP: for each link*/
 
@@ -421,7 +424,7 @@ function authorClickHandler(event){
 
   /* make a new constant "tag" and extract tag from the "href" constant */
 
-  const author = href.replace('#author-', '');
+  const author = href.replace('#author-', '').trim();
 
   /* find all tag links with class active */
 
